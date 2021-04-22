@@ -1,0 +1,10 @@
+<%= render "nav", article: @article %>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="card border-0">
+      <%= link_to "<h2>#{article.title}</h2>".html_safe, article_path(article) %>
+      <p><%= article.content %></p>
+    </div>
+  <% end %>
+</div>

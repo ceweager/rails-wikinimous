@@ -1,0 +1,15 @@
+<%= render "nav", article: @article %>
+
+<div class="container">
+  <div class="card border-0">
+    <div class="card-header border-bottom bg-light">
+      <h2 class= "card-title"><%= @article.title %></h2>
+      <%= link_to "edit", edit_article_path %>
+      <%= link_to "delete", articles_path, method: ":delete", data: {confirm: "are you sure you want to delete #{@article.title}?"}
+       %>
+    </div>
+    <div class="card-body">
+      <p class ="card-text"><%= @article.content %></p>
+    </div>
+  </div>
+</div>
