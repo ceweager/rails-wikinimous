@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.card{
-  width: 400px;
+.container{
+  width: 800px;
+  padding-top: 50px;
+}
+  
+.card>a{
+  color: rgb(66, 115, 221);
+}
+  
+.card-title h2{
+  display:inline-block;
 }

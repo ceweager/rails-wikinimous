@@ -1,10 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
+@import 'articles.scss';
 
-.container{
-  width: 800px;
-  padding-top: 50px;
+
+h5{
+  display: inline-block;
 }
 
-.card>a{
-  color: rgb(66, 115, 221);
+.fa-times:hover{
+  cursor:pointer;
 }

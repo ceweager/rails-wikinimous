@@ -2,14 +2,30 @@
 
 <div class="container">
   <div class="card border-0">
-    <div class="card-header border-bottom bg-light">
-      <h2 class= "card-title"><%= @article.title %></h2>
-      <%= link_to "edit", edit_article_path %>
-      <%= link_to "delete", articles_path, method: ":delete", data: {confirm: "are you sure you want to delete #{@article.title}?"}
-       %>
+	  <% if @article.updated == true %>
+      <div id ="alert" class="alert alert-success justify-content-between" style="display:flex;" role="alert">
+        <h5>Article was successfully updated</h5><i class="fas fa-times"></i>
+      </div>
+		<% end %>
+    <div class="card-header border-bottom bg-transparent">
+      <div class= "card-title">
+				<h2><%= @article.title %></h2>
+				<%= link_to '<i class="fas fa-pencil-alt" aria-hidden="true"></i>
+'.html_safe, edit_article_path %>
+				<%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(@article), method: :delete, data: {confirm: "are you sure you want to delete #{@article.title}?"}
+				%>
+       </div>
     </div>
     <div class="card-body">
       <p class ="card-text"><%= @article.content %></p>
-    </div>
+			<%= link_to "back", articles_path %>
+    </div>	
   </div>
 </div>
+
+<script>
+  let xButton = document.querySelector(".fa-times");
+	xButton.eventListener("click", (event){
+    document.getElementById("#alert").style.display="none";
+	});
+</script>
